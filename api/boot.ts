@@ -28,6 +28,6 @@ export default app;
 const port = parseInt(process.env.PORT || "3000");
 
 import { serve } from "@hono/node-server";
-serve({ fetch: app.fetch, port }, () => {
+serve({ fetch: app.fetch, port, hostname: "0.0.0.0" }, () => {
   console.log(`Server running on port ${port}`);
 });
